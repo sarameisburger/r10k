@@ -1,0 +1,13 @@
+libgit2.rb - GPL with Linking exceptions
+libssh2.rb - BSD
+rubygem-colored.rb - MIT
+rubygem-cri.rb - MIT
+rubygem-faraday_middleware-multi_json.rb - MIT
+rubygem-faraday.rb - MIT
+rubygem-json_pure.rb - Ruby 
+rubygem-log4r.rb - BSD (3 clause)
+rubygem-multi_json.rb - MIT
+rubygem-r10k.rb - Apache 2.0
+rubygem-rugged.rb - MIT
+rubygem-systemu.rb -  BSD (3 clause)
+
