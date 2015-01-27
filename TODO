@@ -1,0 +1,11 @@
+ - No internal mirrors for open source components
+- 404 error on sources
+- add project.file 
+- License Audit
+
+
+- Filesystem Pathing
+- How do we want libraries to load
+- Should I use vendored stuff on rugged?
+
+
