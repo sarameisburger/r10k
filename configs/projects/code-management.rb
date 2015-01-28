@@ -18,7 +18,7 @@ project "code-management" do |proj|
   proj.license "Puppet Labs Commercial"
   proj.vendor "Puppet Labs <info@puppetlabs.com>"
   proj.homepage "https://www.puppetlabs.com"
-#  proj.require 'puppet-agent'
+  proj.requires 'puppet-agent'
 
 
 
@@ -26,7 +26,9 @@ project "code-management" do |proj|
   proj.setting(:cflags, "-I#{proj.includedir}")
   proj.setting(:ldflags, "-L#{proj.libdir} -Wl,-rpath=#{proj.libdir}")
 
-  proj.component "libssh2"
+
+  # It looks like ssh capabilities are statically linked into rugged
+  # proj.component "libssh2"
   proj.component "rubygem-rugged"
   proj.component "rubygem-colored"
   proj.component "rubygem-cri"

@@ -7,10 +7,15 @@ component "rubygem-rugged" do |pkg, settings, platform|
 
   pkg.build_requires "puppet-agent"
   pkg.build_requires "cmake"
-  pkg.build_requires "pkgconfig"
+  if platform.is_rpm?
+    # red hat
+    pkg.build_requires "pkgconfig"
+  else
+    # debian
+    pkg.build_requires "pkg-config"
+  end
 
   pkg.install do
-    "PKG_CONFIG_PATH=#{settings[:pkg_config_path]} #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --use-system-libraries --with-opt-dir=/opt/puppetlabs/agent/  "
-    #"#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem "
+    "PKG_CONFIG_PATH=#{settings[:pkg_config_path]} #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppetlabs/agent/  "
   end
 end
