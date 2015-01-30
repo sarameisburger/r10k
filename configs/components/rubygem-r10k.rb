@@ -8,6 +8,8 @@ component "rubygem-r10k" do |pkg, settings, platform|
   pkg.build_requires "puppet-agent"
 
   pkg.install do
-    [ "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"  ]
+    [ "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"  , 
+      %q{sed -i '/require./aGem.path.unshift("\/opt\/puppetlabs\/server\/apps\/code-management")'  /opt/puppetlabs/server/bin/r10k}
+    ]
   end
 end
