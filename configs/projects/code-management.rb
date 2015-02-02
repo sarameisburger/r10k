@@ -28,7 +28,6 @@ project "code-management" do |proj|
 
 
   # It looks like ssh capabilities are statically linked into rugged
-  # proj.component "libssh2"
   proj.component "rubygem-rugged"
   proj.component "rubygem-colored"
   proj.component "rubygem-cri"
