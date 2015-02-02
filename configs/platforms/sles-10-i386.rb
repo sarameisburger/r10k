@@ -1,3 +1,4 @@
+tag = IO.read('puppet-agent-version').strip
 platform "sles-10-i386" do |plat|
   plat.servicedir "/etc/init.d"
   plat.defaultdir "/etc/sysconfig"
