@@ -5,11 +5,11 @@ component "rubygem-r10k" do |pkg, settings, platform|
   puts  "checking http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
   pkg.url "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
 
-  pkg.build_requires "puppet-agent"
+  pkg.build_requires "pe-ruby"
 
   pkg.install do
     [ "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"  , 
-      %q{sed -i '/require./aGem.path.unshift("\/opt\/puppetlabs\/server\/apps\/code-management")'  /opt/puppetlabs/server/bin/r10k}
+      %q{sed -i '/require./aGem.path.unshift("\/opt\/puppet\/lib\/r10k")'  /opt/puppet/bin/r10k}
     ]
   end
 end

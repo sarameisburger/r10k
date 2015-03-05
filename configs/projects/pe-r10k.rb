@@ -1,31 +1,27 @@
 project "code-management" do |proj|
   # Project level settings our components will care about
-  proj.setting(:prefix, "/opt/puppetlabs/server/apps/code-management")
-  proj.setting(:sysconfdir, "/etc/puppetlabs/server/apps/code-management")
-  proj.setting(:logdir, "/var/log/puppetlabs/server/apps/code-management")
-  proj.setting(:piddir, "/var/run/puppetlabs/server/apps/code-management")
+  proj.setting(:prefix, "/opt/puppet")
+  proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
+  proj.setting(:logdir, "/var/log/pe-r10k")
   proj.setting(:bindir, File.join(proj.prefix, "bin"))
   proj.setting(:libdir, File.join(proj.prefix, "lib"))
   proj.setting(:includedir, File.join(proj.prefix, "include"))
   proj.setting(:datadir, File.join(proj.prefix, "share"))
   proj.setting(:mandir, File.join(proj.datadir, "man"))
-  proj.setting(:gem_inst, "GEM_HOME=/opt/puppetlabs/server/apps/code-management /opt/puppetlabs/agent/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppetlabs/server/bin --local --force  ")
-  proj.setting(:pkg_config_path, "/opt/puppetlabs/server/apps/code-management/lib/pkgconfig/:/opt/puppetlabs/agent/lib/pkgconfig/")
+  proj.setting(:gem_inst, "GEM_HOME=/opt/puppet/lib/r10k /opt/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppet/bin --local --force  ")
+  proj.setting(:pkg_config_path, "/opt/puppet/lib/pkgconfig/")
 #  proj.setting(:ruby_vendordir, File.join(proj.libdir, "ruby", "vendor_ruby"))
 
-  proj.description "Code Management bits"
+  proj.description "R10k for Puppet Enterprise"
   proj.version_from_git
   proj.license "Puppet Labs Commercial"
   proj.vendor "Puppet Labs <info@puppetlabs.com>"
   proj.homepage "https://www.puppetlabs.com"
-  proj.requires 'puppet-agent'
-
-
+  proj.requires 'pe-ruby'
 
   # Platform specific
   proj.setting(:cflags, "-I#{proj.includedir}")
   proj.setting(:ldflags, "-L#{proj.libdir} -Wl,-rpath=#{proj.libdir}")
-
 
   # It looks like ssh capabilities are statically linked into rugged
   proj.component "rubygem-rugged"
@@ -39,11 +35,8 @@ project "code-management" do |proj|
   proj.component "rubygem-r10k"
   proj.component "rubygem-systemu"
 
-
   proj.directory proj.prefix
   proj.directory proj.sysconfdir
   proj.directory proj.logdir
-  proj.directory proj.piddir
-  proj.directory '/opt/puppetlabs/server/bin'
 
 end
