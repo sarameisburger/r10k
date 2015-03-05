@@ -1,4 +1,4 @@
-project "code-management" do |proj|
+project "pe-r10k" do |proj|
   # Project level settings our components will care about
   proj.setting(:prefix, "/opt/puppet")
   proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
