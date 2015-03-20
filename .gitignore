@@ -2,3 +2,7 @@ vendor/*
 output/*
 .bundle
 Gemfile.lock
+builds.puppetlabs.lan
+pkg*
+vanagon_hosts.log
+gems
