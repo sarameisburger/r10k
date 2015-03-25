@@ -9,7 +9,7 @@ component "rubygem-r10k" do |pkg, settings, platform|
 
   pkg.install do
     [ "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"  ,
-      %q{sed -i '/require./aGem.path.unshift("\/opt\/puppet\/lib\/r10k")\nGem.refresh'  /opt/puppet/bin/r10k},
+      %q{sed -i '/require./aENV["GEM_HOME"]="\/opt\/puppet\/lib\/r10k"\nGem.path.unshift("\/opt\/puppet\/lib\/r10k")\nGem.refresh'  /opt/puppet/bin/r10k},
     ]
   end
 
