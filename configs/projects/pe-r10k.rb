@@ -23,7 +23,7 @@ project "pe-r10k" do |proj|
   proj.setting(:cflags, "-I#{proj.includedir}")
   proj.setting(:ldflags, "-L#{proj.libdir} -Wl,-rpath=#{proj.libdir}")
 
-  # It looks like ssh capabilities are statically linked into rugged
+  proj.component "libssh2"
   proj.component "rubygem-rugged"
   proj.component "rubygem-colored"
   proj.component "rubygem-cri"
