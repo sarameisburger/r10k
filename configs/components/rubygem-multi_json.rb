@@ -8,6 +8,6 @@ component "rubygem-multi_json" do |pkg, settings, platform|
   pkg.build_requires "pe-ruby"
 
   pkg.install do
-    "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"
+    "#{settings[:gem_inst]} #{gemname} -v #{pkg.get_version}"
   end
 end
