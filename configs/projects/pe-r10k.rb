@@ -34,6 +34,7 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-json_pure"
   proj.component "rubygem-log4r"
   proj.component "rubygem-multi_json"
+  proj.component "rubygem-semantic_puppet"
   proj.component "rubygem-r10k"
 
   proj.directory proj.prefix
