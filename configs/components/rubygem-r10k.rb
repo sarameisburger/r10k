@@ -4,7 +4,11 @@ component "rubygem-r10k" do |pkg, settings, platform|
   pkg.version '1.4.2'
 
   pkg.build_requires "pe-ruby"
-  pkg.build_requires "git"
+  if platform.name =~ /ubuntu/
+    pkg.build_requires "git-core"
+  else
+    pkg.build_requires "git"
+  end
 
   pkg.install do
     [
