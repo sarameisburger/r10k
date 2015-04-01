@@ -35,7 +35,6 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-log4r"
   proj.component "rubygem-multi_json"
   proj.component "rubygem-r10k"
-  proj.component "rubygem-systemu"
 
   proj.directory proj.prefix
   proj.directory proj.sysconfdir
