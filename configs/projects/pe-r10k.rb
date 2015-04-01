@@ -24,6 +24,7 @@ project "pe-r10k" do |proj|
   proj.setting(:ldflags, "-L#{proj.libdir} -Wl,-rpath=#{proj.libdir}")
 
   proj.component "libssh2"
+  proj.component "libgit2"
   proj.component "rubygem-rugged"
   proj.component "rubygem-colored"
   proj.component "rubygem-cri"

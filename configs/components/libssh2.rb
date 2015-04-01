@@ -10,14 +10,16 @@ component "libssh2" do |pkg, settings, platform|
   ## passing the CFLAGS and LDFLAGS as evnvironment to both the
   ## configure and the build
   pkg.configure do
-    ["CFLAGS='#{settings[:cflags]}' \
+    [
+      "CFLAGS='#{settings[:cflags]}' \
       LDFLAGS='#{settings[:ldflags]}' \
       ./configure \
         --prefix=#{settings[:prefix]} \
         --with-openssl \
         --with-libssl-prefix=#{settings[:prefix]} \
         --without-libgcrypt \
-        --enable-shared"]
+        --enable-shared"
+    ]
   end
 
   pkg.build do

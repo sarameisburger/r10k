@@ -15,14 +15,13 @@ component "rubygem-rugged" do |pkg, settings, platform|
     pkg.build_requires "pkg-config"
   end
 
-  pkg.build_requires "libssh2"
-
   pkg.install do
     [
       "PKG_CONFIG_PATH='#{settings[:pkg_config_path]}' \
       CFLAGS='#{settings[:cflags]}' \
       LDFLAGS='#{settings[:ldflags]}' \
-      #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppet"
+      CC=/opt/pl-build-tools/bin/gcc \
+      #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppet --use-system-libraries"
     ]
   end
 end
