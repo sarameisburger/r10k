@@ -16,6 +16,12 @@ component "rubygem-rugged" do |pkg, settings, platform|
   end
 
   pkg.install do
-    [ "PKG_CONFIG_PATH=#{settings[:pkg_config_path]} #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppet " ]
+    [
+      "PKG_CONFIG_PATH='#{settings[:pkg_config_path]}' \
+      CFLAGS='#{settings[:cflags]}' \
+      LDFLAGS='#{settings[:ldflags]}' \
+      CC=/opt/pl-build-tools/bin/gcc \
+      #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppet --use-system-libraries"
+    ]
   end
 end
