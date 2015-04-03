@@ -1,7 +1,7 @@
 component "rubygem-r10k" do |pkg, settings, platform|
 
   pkg.load_from_json('configs/components/rubygem-r10k.json')
-  pkg.version '1.4.2'
+  pkg.version '1.5.0'
 
   pkg.build_requires "pe-ruby"
   if platform.name =~ /ubuntu/
