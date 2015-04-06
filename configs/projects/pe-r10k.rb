@@ -8,7 +8,7 @@ project "pe-r10k" do |proj|
   proj.setting(:includedir, File.join(proj.prefix, "include"))
   proj.setting(:datadir, File.join(proj.prefix, "share"))
   proj.setting(:mandir, File.join(proj.datadir, "man"))
-  proj.setting(:gem_inst, "GEM_HOME=/opt/puppet/lib/r10k /opt/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppet/bin --local --force  ")
+  proj.setting(:gem_inst, "/opt/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppet/bin --local --force ")
   proj.setting(:pkg_config_path, "/opt/puppet/lib/pkgconfig/")
 #  proj.setting(:ruby_vendordir, File.join(proj.libdir, "ruby", "vendor_ruby"))
 
