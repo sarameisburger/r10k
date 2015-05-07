@@ -5,7 +5,7 @@ component "rubygem-rugged" do |pkg, settings, platform|
   puts  "checking http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
   pkg.url "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
 
-  pkg.build_requires "pe-ruby"
+  pkg.build_requires "puppet-agent"
   pkg.build_requires "cmake"
   if platform.is_rpm?
     # red hat
@@ -21,7 +21,7 @@ component "rubygem-rugged" do |pkg, settings, platform|
       CFLAGS='#{settings[:cflags]}' \
       LDFLAGS='#{settings[:ldflags]}' \
       CC=/opt/pl-build-tools/bin/gcc \
-      #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=/opt/puppet --use-system-libraries"
+      #{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem -- --with-opt-dir=#{settings[:prefix]} --use-system-libraries"
     ]
   end
 end

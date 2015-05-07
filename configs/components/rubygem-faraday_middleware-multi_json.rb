@@ -6,7 +6,7 @@ component "faraday_middleware-multi_json" do |pkg, settings, platform|
   pkg.url "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
   
 
-  pkg.build_requires "pe-ruby"
+  pkg.build_requires "puppet-agent"
 
   pkg.install do
     "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"

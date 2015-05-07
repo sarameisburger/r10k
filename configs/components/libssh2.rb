@@ -3,7 +3,7 @@ component "libssh2" do |pkg, settings, platform|
   pkg.md5sum "e7fa3f5c6bd2d67a9b360ff726bbc6ba"
   pkg.url "http://buildsources.delivery.puppetlabs.net/libssh2-#{pkg.get_version}.tar.gz"
 
-  pkg.build_requires 'pe-openssl'
+  pkg.build_requires 'puppet-agent'
 
   ## As documented in http://trac.libssh2.org/ticket/273, at the moment
   ## the configure will ignore --with-ssl-prefix. The workaround is 
@@ -16,7 +16,7 @@ component "libssh2" do |pkg, settings, platform|
       ./configure \
         --prefix=#{settings[:prefix]} \
         --with-openssl \
-        --with-libssl-prefix=#{settings[:prefix]} \
+        --with-libssl-prefix=/opt/puppetlabs/puppet \
         --without-libgcrypt \
         --enable-shared"
     ]

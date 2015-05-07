@@ -1,15 +1,15 @@
-project "pe-r10k" do |proj|
+project "pe-code-manager" do |proj|
   # Project level settings our components will care about
-  proj.setting(:prefix, "/opt/puppet")
-  proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
-  proj.setting(:logdir, "/var/log/pe-r10k")
+  proj.setting(:prefix, "/opt/puppetlabs/server/apps/code-manager")
+  proj.setting(:sysconfdir, "/etc/puppetlabs/code-manager")
+  proj.setting(:logdir, "/var/log/puppetlabs/code-manager")
   proj.setting(:bindir, File.join(proj.prefix, "bin"))
   proj.setting(:libdir, File.join(proj.prefix, "lib"))
   proj.setting(:includedir, File.join(proj.prefix, "include"))
   proj.setting(:datadir, File.join(proj.prefix, "share"))
-  proj.setting(:mandir, File.join(proj.datadir, "man"))
-  proj.setting(:gem_inst, "/opt/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppet/bin --local --force ")
-  proj.setting(:pkg_config_path, "/opt/puppet/lib/pkgconfig/")
+  proj.setting(:mandir, "/opt/puppetlabs/server/share/man")
+  proj.setting(:gem_inst, "/opt/puppetlabs/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppetlabs/puppet/bin --local --force ")
+  proj.setting(:pkg_config_path, "/opt/puppetlabs/puppet/lib/pkgconfig/")
 #  proj.setting(:ruby_vendordir, File.join(proj.libdir, "ruby", "vendor_ruby"))
 
   proj.description "R10k for Puppet Enterprise"
@@ -17,11 +17,11 @@ project "pe-r10k" do |proj|
   proj.license "Puppet Labs Commercial"
   proj.vendor "Puppet Labs <info@puppetlabs.com>"
   proj.homepage "https://www.puppetlabs.com"
-  proj.requires 'pe-ruby'
+  proj.requires 'puppet-agent'
 
   # Platform specific
-  proj.setting(:cflags, "-I#{proj.includedir}")
-  proj.setting(:ldflags, "-L#{proj.libdir} -Wl,-rpath=#{proj.libdir}")
+  proj.setting(:cflags, "-I#{proj.includedir} -I/opt/puppetlabs/puppet/include")
+  proj.setting(:ldflags, "-L#{proj.libdir} -L/opt/puppetlabs/puppet/lib -Wl,-rpath=#{proj.libdir} -Wl,-rpath=/opt/puppetlabs/puppet/lib")
 
   proj.component "libssh2"
   proj.component "libgit2"
@@ -41,5 +41,7 @@ project "pe-r10k" do |proj|
   proj.directory proj.prefix
   proj.directory proj.sysconfdir
   proj.directory proj.logdir
+  proj.directory "/opt/puppetlabs/puppet/bin"
+  proj.directory "/opt/puppetlabs/puppet/lib"
 
 end
