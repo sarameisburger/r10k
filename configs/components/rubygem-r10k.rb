@@ -2,7 +2,7 @@ component "rubygem-r10k" do |pkg, settings, platform|
 
   pkg.load_from_json('configs/components/rubygem-r10k.json')
 
-  pkg.build_requires "pe-ruby"
+  pkg.build_requires "puppet-agent"
   if platform.name =~ /ubuntu/
     pkg.build_requires "git-core"
   else
