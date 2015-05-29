@@ -42,6 +42,6 @@ project "pe-code-manager" do |proj|
   proj.directory proj.sysconfdir
   proj.directory proj.logdir
   proj.directory "/opt/puppetlabs/puppet/bin"
-  proj.directory "/opt/puppetlabs/puppet/lib"
+  proj.directory "/opt/puppetlabs/puppet/lib/ruby/gems"
 
 end
