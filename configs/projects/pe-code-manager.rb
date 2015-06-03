@@ -1,7 +1,7 @@
 project "pe-code-manager" do |proj|
   # Project level settings our components will care about
   proj.setting(:prefix, "/opt/puppetlabs/server/apps/code-manager")
-  proj.setting(:sysconfdir, "/etc/puppetlabs/code-manager")
+  proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
   proj.setting(:logdir, "/var/log/puppetlabs/code-manager")
   proj.setting(:bindir, File.join(proj.prefix, "bin"))
   proj.setting(:libdir, File.join(proj.prefix, "lib"))
