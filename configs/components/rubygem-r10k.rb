@@ -13,7 +13,9 @@ component "rubygem-r10k" do |pkg, settings, platform|
   pkg.install do
     [
       "gem build r10k.gemspec",
-      "#{settings[:gem_inst]} r10k-*.gem"  ,
+      "#{settings[:gem_inst]} r10k-#{pkg.get_version}.gem",
     ]
   end
+
+  pkg.install_file("#{settings[:gem_path]}/r10k-#{pkg.get_version}/r10k.yaml.example", "#{settings[:sysconfdir]}/r10k.yaml.example")
 end
