@@ -1,5 +1,5 @@
 ---
-project: 'pe-code-manager'
+project: 'pe-r10k'
 packaging_url: 'git://github.com/puppetlabs/packaging.git --branch=master'
 packaging_repo: 'packaging'
 gpg_name: 'info@puppetlabs.com'
