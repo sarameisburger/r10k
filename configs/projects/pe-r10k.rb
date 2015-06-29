@@ -3,7 +3,8 @@ project "pe-r10k" do |proj|
   proj.setting(:prefix, "/opt/puppetlabs/server/apps/r10k")
   proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
   proj.setting(:logdir, "/var/log/puppetlabs/r10k")
-  proj.setting(:bindir, File.join(proj.prefix, "bin"))
+  proj.setting(:bindir, "/opt/puppetlabs/puppet/bin")
+  proj.setting(:link_bindir, "/opt/puppetlabs/bin")
   proj.setting(:libdir, File.join(proj.prefix, "lib"))
   proj.setting(:includedir, File.join(proj.prefix, "include"))
   proj.setting(:datadir, File.join(proj.prefix, "share"))
@@ -44,6 +45,7 @@ project "pe-r10k" do |proj|
   proj.directory proj.prefix
   proj.directory proj.sysconfdir
   proj.directory proj.logdir
+  proj.directory "/opt/puppetlabs/bin"
   proj.directory "/opt/puppetlabs/puppet/bin"
   proj.directory "/opt/puppetlabs/puppet/lib/ruby/gems"
 
