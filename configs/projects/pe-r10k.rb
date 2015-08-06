@@ -36,7 +36,6 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-faraday_middleware-multi_json"
   proj.component "rubygem-minitar"
   proj.component "rubygem-multipart-post"
-  proj.component "rubygem-json_pure"
   proj.component "rubygem-log4r"
   proj.component "rubygem-multi_json"
   proj.component "rubygem-semantic_puppet"
