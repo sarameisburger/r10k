@@ -39,6 +39,7 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-log4r"
   proj.component "rubygem-multi_json"
   proj.component "rubygem-semantic_puppet"
+  proj.component "rubygem-puppet_forge"
   proj.component "rubygem-r10k"
   proj.component "r10k-yaml-example"
 
