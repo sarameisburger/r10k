@@ -1,6 +1,6 @@
 component "rubygem-r10k" do |pkg, settings, platform|
 
-  pkg.version '2.0.3'
+  pkg.version '2.1.0dev'
   pkg.load_from_json('configs/components/rubygem-r10k.json')
 
   pkg.build_requires "puppet-agent"
