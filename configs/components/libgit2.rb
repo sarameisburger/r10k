@@ -1,11 +1,11 @@
 component "libgit2" do |pkg, settings, platform|
-  pkg.version "0.21.5"
-  pkg.md5sum "6f1d64b2d50239f0c518cb45fbe3da4a"
-  pkg.url "http://buildsources.delivery.puppetlabs.net/libgit2-0.21.5.tar.gz"
+  pkg.version "0.24.0"
+  pkg.md5sum "8cabf04502d7203793b32f47ca410ae3"
+  pkg.url "http://buildsources.delivery.puppetlabs.net/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
 
   pkg.build_requires "pl-gcc"
   pkg.build_requires "pl-cmake"
-  
+
   if platform.is_rpm?
     pkg.build_requires "pkgconfig"
   else
