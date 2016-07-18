@@ -30,6 +30,7 @@ project "pe-r10k" do |proj|
   proj.component "libssh2"
   proj.component "libgit2"
   proj.component "rubygem-rugged"
+  proj.component "rubygem-colored"
   proj.component "rubygem-cri"
   proj.component "rubygem-faraday"
   proj.component "rubygem-faraday_middleware"
