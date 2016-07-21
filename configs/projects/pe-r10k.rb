@@ -46,6 +46,11 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-puppet_forge"
   proj.component "rubygem-r10k"
   proj.component "r10k-yaml-example"
+  proj.component "rubygem-gettext-setup"
+  proj.component "rubygem-gettext"
+  proj.component "rubygem-fast_gettext"
+  proj.component "rubygem-locale"
+  proj.component "rubygem-text"
 
   proj.directory proj.prefix
   proj.directory proj.sysconfdir
