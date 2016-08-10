@@ -1,7 +1,7 @@
 component "rubygem-puppet_forge" do |pkg, settings, platform|
   gemname = pkg.get_name.gsub('rubygem-', '')
-  pkg.version "2.2.1"
-  pkg.md5sum "1c8a7d9879171c87d1cd61a4382741c3"
+  pkg.version "2.2.2"
+  pkg.md5sum "3f92fbba33923a5bac5181080d2883e6"
   pkg.url "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
 
   pkg.build_requires "puppet-agent"
