@@ -10,5 +10,3 @@ yum_host: 'enterprise.delivery.puppetlabs.net'
 apt_host: 'enterprise.delivery.puppetlabs.net'
 sign_tar: FALSE
 vanagon_project: TRUE
-yum_repo_name: ''
-apt_repo_name: ''
