@@ -44,11 +44,6 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-ethon"
   proj.component "rubygem-typhoeus"
   proj.component "rubygem-puppet_forge"
-  proj.component "rubygem-gettext-setup"
-  proj.component "rubygem-gettext"
-  proj.component "rubygem-fast_gettext"
-  proj.component "rubygem-locale"
-  proj.component "rubygem-text"
   proj.component "rubygem-r10k"
   proj.component "r10k-yaml-example"
 
