@@ -1,4 +1,14 @@
 project "pe-r10k" do |proj|
+
+
+  # (RK-271) Conflict pe-r10k packages with client-tools packages
+  # shipped prior to 16.4.0. Those packages have a gem conflict
+  # with pe-r10k, where packages of that version and later do not.
+  #
+  # NOTE: the following translates to "conflict this project with
+  # pe-client-tools packages with a version less than 16.4.0"
+  proj.conflicts "pe-client-tools", "16.4.0"
+
   # Project level settings our components will care about
   proj.setting(:prefix, "/opt/puppetlabs/server/apps/r10k")
   proj.setting(:sysconfdir, "/etc/puppetlabs/r10k")
