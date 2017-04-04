@@ -6,6 +6,8 @@ component "rubygem-faraday" do |pkg, settings, platform|
 
   pkg.build_requires "puppet-agent"
 
+  pkg.apply_patch "resources/patches/faraday/parse-multiple-response-headers-for-proxy-auth.patch", destination: "#{settings[:gem_path]}#{gemname}-#{pkg.get_version}", after: "install"
+
   pkg.install do
     "#{settings[:gem_inst]} #{gemname}-#{pkg.get_version}.gem"
   end
