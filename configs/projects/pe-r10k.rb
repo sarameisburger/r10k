@@ -49,7 +49,6 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-multipart-post"
   proj.component "rubygem-log4r"
   proj.component "rubygem-multi_json"
-  proj.component "rubygem-semantic_puppet"
   proj.component "rubygem-ffi"
   proj.component "rubygem-ethon"
   proj.component "rubygem-typhoeus"
