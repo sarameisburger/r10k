@@ -1,7 +1,7 @@
 component "libgit2" do |pkg, settings, platform|
   pkg.version "0.24.0"
   pkg.md5sum "8cabf04502d7203793b32f47ca410ae3"
-  pkg.url "http://buildsources.delivery.puppetlabs.net/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
+  pkg.url "#{settings[:buildsources_url]}/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
 
   pkg.build_requires "pl-gcc"
   pkg.build_requires "pl-cmake"
