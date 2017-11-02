@@ -2,7 +2,7 @@ component "rubygem-ffi" do |pkg, settings, platform|
   gemname = pkg.get_name.gsub('rubygem-', '')
   pkg.version "1.9.10"
   pkg.md5sum "dede6f5db06f699153b5cdf24c0e7b08"
-  pkg.url "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
+  pkg.url "#{settings[:buildsources_url]}/#{gemname}-#{pkg.get_version}.gem"
 
   pkg.build_requires "puppet-agent"
   pkg.build_requires "cmake"
