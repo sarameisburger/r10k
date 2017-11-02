@@ -22,6 +22,8 @@ project "pe-r10k" do |proj|
   proj.setting(:gem_inst, "/opt/puppetlabs/puppet/bin/gem install --no-rdoc --no-ri --bindir=/opt/puppetlabs/puppet/bin --local --force ")
   proj.setting(:pkg_config_path, "/opt/puppetlabs/puppet/lib/pkgconfig/:/opt/puppetlabs/server/apps/r10k/lib/pkgconfig/")
   proj.setting(:gem_path, "/opt/puppetlabs/puppet/lib/ruby/gems/2.4.0/gems/")
+  proj.setting(:artifactory_url, "https://artifactory.delivery.puppetlabs.net/artifactory")
+  proj.setting(:buildsources_url, "#{proj.artifactory_url}/generic/buildsources")
 
 #  proj.setting(:ruby_vendordir, File.join(proj.libdir, "ruby", "vendor_ruby"))
 

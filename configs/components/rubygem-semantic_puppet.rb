@@ -3,7 +3,7 @@ component "rubygem-semantic_puppet" do |pkg, settings, platform|
   pkg.version "1.0.1"
   pkg.md5sum "8ce85a0206a640654e0019eadf615672"
   pkg.url "https://rubygems.org/downloads/#{gemname}-#{pkg.get_version}.gem"
-  pkg.mirror "http://buildsources.delivery.puppetlabs.net/#{gemname}-#{pkg.get_version}.gem"
+  pkg.mirror "#{settings[:buildsources_url]}/#{gemname}-#{pkg.get_version}.gem"
 
   pkg.build_requires "puppet-agent"
 
