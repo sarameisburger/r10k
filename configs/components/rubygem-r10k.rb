@@ -12,7 +12,7 @@ component "rubygem-r10k" do |pkg, settings, platform|
 
   pkg.install do
     [
-      "gem build r10k.gemspec",
+      "#{settings[:gem_build]} r10k.gemspec",
       "#{settings[:gem_inst]} r10k-#{pkg.get_version}.gem",
       # This is a basic smoke test for r10k to make sure it works
       "#{settings[:bindir]}/r10k version",
