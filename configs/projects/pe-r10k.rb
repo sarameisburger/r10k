@@ -48,6 +48,7 @@ project "pe-r10k" do |proj|
   proj.component "rubygem-faraday"
   proj.component "rubygem-faraday_middleware"
   proj.component "rubygem-faraday_middleware-multi_json"
+  proj.component "rubygem-gettext-setup"
   proj.component "rubygem-minitar"
   proj.component "rubygem-multipart-post"
   proj.component "rubygem-log4r"
