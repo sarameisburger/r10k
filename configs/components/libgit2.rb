@@ -4,8 +4,16 @@ component "libgit2" do |pkg, settings, platform|
   pkg.url "#{settings[:buildsources_url]}/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
   pkg.dirname "#{pkg.get_name}-#{pkg.get_version}"
 
-  pkg.build_requires "pl-gcc"
-  pkg.build_requires "pl-cmake"
+  if platform.name !~ /ubuntu-18/
+    pkg.build_requires "pl-gcc"
+    pkg.build_requires "pl-cmake"
+    compiler_path = "/opt/pl-build-tools/bin/gcc"
+    cmake_path = "/opt/pl-build-tools/bin/cmake"
+  else
+    pkg.build_requires "cmake"
+    compiler_path = "/usr/bin/gcc"
+    cmake_path = "/usr/bin/cmake"
+  end
 
   if platform.is_rpm?
     pkg.build_requires "pkgconfig"
@@ -23,8 +31,8 @@ component "libgit2" do |pkg, settings, platform|
       LDFLAGS='#{settings[:ldflags]}' \
       CMAKE_PREFIX_PATH='#{settings[:prefix]}' \
       PKG_CONFIG_PATH='#{settings[:pkg_config_path]}' \
-      CC=/opt/pl-build-tools/bin/gcc \
-      /opt/pl-build-tools/bin/cmake .. \
+      CC=#{compiler_path} \
+      #{cmake_path} .. \
         -DCMAKE_INSTALL_PREFIX='#{settings[:prefix]}' \
         -DBUILD_CLAR=OFF \
         -DTHREADSAFE=ON \
@@ -43,7 +51,7 @@ component "libgit2" do |pkg, settings, platform|
       CFLAGS='#{settings[:cflags]}' \
       LDFLAGS='#{settings[:ldflags]}' \
       CMAKE_PREFIX_PATH='#{settings[:prefix]}' \
-      CC=/opt/pl-build-tools/bin/gcc \
+      CC=#{compiler_path} \
       #{platform[:make]} -j$(shell expr $(shell #{platform[:num_cores]}) + 1)"
     ]
   end

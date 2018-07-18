@@ -1,6 +1,5 @@
 component "rubygem-r10k" do |pkg, settings, platform|
 
-  pkg.version '2.6.3'
   pkg.load_from_json('configs/components/rubygem-r10k.json')
 
   pkg.build_requires "puppet-agent"
@@ -13,7 +12,7 @@ component "rubygem-r10k" do |pkg, settings, platform|
   pkg.install do
     [
       "#{settings[:gem_build]} r10k.gemspec",
-      "#{settings[:gem_inst]} r10k-#{pkg.get_version}.gem",
+      "#{settings[:gem_inst]} r10k-*.gem",
       # This is a basic smoke test for r10k to make sure it works
       "#{settings[:bindir]}/r10k version",
     ]
