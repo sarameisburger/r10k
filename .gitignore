@@ -6,3 +6,4 @@ builds.puppetlabs.lan
 pkg*
 vanagon_hosts.log
 gems
+ext/packaging
