@@ -1,9 +1,8 @@
 RAKE_ROOT = File.expand_path(File.dirname(__FILE__))
 
-begin
-  load File.join(RAKE_ROOT, 'ext', 'packaging', 'packaging.rake')
-rescue LoadError
-end
+require 'packaging'
+
+Pkg::Util::RakeUtils.load_packaging_tasks
 
 build_defs_file = File.join(RAKE_ROOT, 'ext', 'build_defaults.yaml')
 if File.exist?(build_defs_file)
