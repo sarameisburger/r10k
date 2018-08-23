@@ -1,6 +1,6 @@
 component "libssh2" do |pkg, settings, platform|
-  pkg.version "1.7.0"
-  pkg.md5sum "b01662a210e94cccf2f76094db7dac5c"
+  pkg.version "1.8.0"
+  pkg.md5sum "3d1147cae66e2959ea5441b183de1b1c"
   pkg.url "#{settings[:buildsources_url]}/libssh2-#{pkg.get_version}.tar.gz"
 
   pkg.build_requires 'puppet-agent'
