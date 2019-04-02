@@ -14,7 +14,7 @@ component "rubygem-rugged" do |pkg, settings, platform|
     pkg.build_requires "pkg-config"
   end
 
-  if platform.name =~ /ubuntu-18/
+  if platform.name =~ /ubuntu-18|el-8/
     compiler_path = "/usr/bin/gcc"
   else
     compiler_path = "/opt/pl-build-tools/bin/gcc"
