@@ -1,10 +1,10 @@
 component "libgit2" do |pkg, settings, platform|
-  pkg.version "0.25.1"
-  pkg.md5sum "3b285ce94200f00c34962711f001b192"
+  pkg.version "0.28.1"
+  pkg.md5sum "826ef69ef912b8cb605e6f413d7aab5f"
   pkg.url "#{settings[:buildsources_url]}/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
   pkg.dirname "#{pkg.get_name}-#{pkg.get_version}"
 
-  if platform.name !~ /ubuntu-18/
+  if platform.name !~ /ubuntu-18|el-8/
     pkg.build_requires "pl-gcc"
     pkg.build_requires "pl-cmake"
     compiler_path = "/opt/pl-build-tools/bin/gcc"

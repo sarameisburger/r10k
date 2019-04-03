@@ -1,7 +1,7 @@
 component "rubygem-rugged" do |pkg, settings, platform|
   gemname = pkg.get_name.gsub('rubygem-', '')
-  pkg.version "0.25.1.1"
-  pkg.md5sum "df2307d620c56ea51807e2f2098a2ae4"
+  pkg.version "0.28.1"
+  pkg.md5sum "19eedd62c721f26176b1fc8a2fc71784"
   pkg.url "#{settings[:buildsources_url]}/#{gemname}-#{pkg.get_version}.gem"
 
   pkg.build_requires "puppet-agent"
@@ -14,7 +14,7 @@ component "rubygem-rugged" do |pkg, settings, platform|
     pkg.build_requires "pkg-config"
   end
 
-  if platform.name =~ /ubuntu-18/
+  if platform.name =~ /ubuntu-18|el-8/
     compiler_path = "/usr/bin/gcc"
   else
     compiler_path = "/opt/pl-build-tools/bin/gcc"
