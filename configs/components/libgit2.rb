@@ -1,6 +1,6 @@
 component "libgit2" do |pkg, settings, platform|
-  pkg.version "0.28.1"
-  pkg.md5sum "826ef69ef912b8cb605e6f413d7aab5f"
+  pkg.version "0.27.7"
+  pkg.md5sum "5f3ef881ba0444254f765a2f0a1f3479"
   pkg.url "#{settings[:buildsources_url]}/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
   pkg.dirname "#{pkg.get_name}-#{pkg.get_version}"
 
