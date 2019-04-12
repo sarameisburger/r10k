@@ -1,7 +1,7 @@
 component "rubygem-rugged" do |pkg, settings, platform|
   gemname = pkg.get_name.gsub('rubygem-', '')
-  pkg.version "0.28.1"
-  pkg.md5sum "19eedd62c721f26176b1fc8a2fc71784"
+  pkg.version "0.27.7"
+  pkg.md5sum "ab6b134ec910e8ee95836564a4820a30"
   pkg.url "#{settings[:buildsources_url]}/#{gemname}-#{pkg.get_version}.gem"
 
   pkg.build_requires "puppet-agent"
